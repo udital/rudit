@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: normal;
+}
+
+.primary-bg {
+  background-color: #7DA9FF;
+  color: white;
+}
+
+.gray-0 {
+  background-color: #F1F1F1;
+}
+
+.gray-1 {
+  background-color: #EBEBEB;
+}
+
+.gray-2 {
+  background-color: #E1E1E1;
+}
+
+.gray-3 {
+  background-color: #DCDCDC;
+}
+
+.gray-3 {
+  background-color: #c4c4c4;
+}
+
+.gray-4 {
+  background-color: #c6c6c6;
+}
+
+input[type=text] {
+  background-color: #EBEBEB;
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 6px;
+  padding-left: 12px;
+}
+
+input[type=password] {
+  background-color: #EBEBEB;
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 6px;
+  padding-left: 12px;
+}
+
+button {
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 10px;
+  padding-left: 12px;
+}
+
+.w-82 {
+  width: 23rem;
+}
+
+label {
+  font-size: 15;
+  margin-right: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.all-round {
+  border-radius: 100px;
+}
