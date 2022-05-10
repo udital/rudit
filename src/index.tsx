@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import PrivateRoute from './routes/PrivateRoute'
+import GoogleLoginPage from './pages/GoogleLoginPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
         <PrivateRoute token="" outlet={<App />}/>
       }/>
       <Route path="login" element={<Login />}/>
+      <Route path="google_cb" element={<GoogleLoginPage/>}/>
     </Routes>
   </BrowserRouter>
 )
