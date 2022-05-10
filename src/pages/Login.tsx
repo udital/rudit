@@ -3,9 +3,9 @@ import '../stylesheets/App.css'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import g from '../images/g.png'
-import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login'
+import discord from '../images/Discord-Logo-Color.png'
 import Modal, { ModalOptions } from '../components/Modal'
-import { onSuccess } from '../login/google'
+import qs from 'qs'
 
 function Login() {
   const navigate = useNavigate()
@@ -16,17 +16,19 @@ function Login() {
         <div className='flex h-screen'>
             <div className='m-auto'>
                 <span style={{fontSize: 32, marginLeft: 5}}>로그인</span><br/><br/>
-                <GoogleLogin
-                  uxMode='redirect'
-                  clientId={process.env.REACT_APP_GOOGLE_API_KEY as string}
-                  render={renderProps => {
-                    return <button onClick={renderProps.onClick} disabled={renderProps.disabled} className='bg-blue-400 text-white w-44' style={{marginLeft: 5, marginBottom: 5}}><img src={g} height={24} width={24} style={{float: 'left', backgroundColor: 'white', borderRadius: 100, border: '3px solid'}}/>Google로 로그인</button>
-                  }}
-                  onSuccess={(response: GoogleLoginResponse | GoogleLoginResponseOffline) => {onSuccess(response, navigate)}}
-                  onFailure={(error) => {
-                    console.log(error)
-                  }}
-                />
+                <button onClick={() => window.location.href = "https://accounts.google.com/o/oauth2/v2/auth?" + qs.stringify({
+                  client_id: process.env.REACT_APP_GOOGLE_API_KEY,
+                  redirect_uri: process.env.REACT_APP_ENDPOINT + '/google_cb',
+                  response_type: 'code',
+                  scope: 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
+                  access_type: 'offline'
+                })} className='bg-blue-400 text-white w-44' style={{marginLeft: 5, marginBottom: 5}}><img src={g} height={24} width={24} style={{float: 'left', backgroundColor: 'white', borderRadius: 100, border: '3px solid'}}/>Google로 로그인</button><br/>
+                <button onClick={() => window.location.href = "https://discord.com/api/oauth2/authorize?" + qs.stringify({
+                  client_id: process.env.REACT_APP_DISCORD_ID,
+                  redirect_uri: process.env.REACT_APP_ENDPOINT + '/discord_cb',
+                  response_type: 'code',
+                  scope: 'identify email'
+                })} className='discord-bg text-white w-46' style={{marginLeft: 5, marginBottom: 5}}><img src={discord} height={24} width={24} style={{float: 'left', backgroundColor: 'white', borderRadius: 100, border: '3px solid'}}/>Discord로 로그인</button>
             </div>
         </div>
     </div>

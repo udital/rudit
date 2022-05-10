@@ -10,6 +10,11 @@ body {
   color: white;
 }
 
+.discord-bg {
+  background-color: #5865F2;
+  color: white;
+}
+
 .gray-0 {
   background-color: #F1F1F1;
 }
@@ -105,4 +110,8 @@ input:focus {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 500ms;
+}
+
+.w-46 {
+  width: 184px;
 }

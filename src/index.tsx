@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './pages/Login'
 import PrivateRoute from './routes/PrivateRoute'
 import GoogleLoginPage from './pages/GoogleLoginPage'
+import DiscordLoginPage from './pages/DiscordLoginPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,7 @@ root.render(
       }/>
       <Route path="login" element={<Login />}/>
       <Route path="google_cb" element={<GoogleLoginPage/>}/>
+      <Route path="discord_cb" element={<DiscordLoginPage/>}/>
     </Routes>
   </BrowserRouter>
 )

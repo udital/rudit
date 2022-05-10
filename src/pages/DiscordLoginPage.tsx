@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ReactComponent as Loading } from '../images/loading.svg'
 
-export interface IGoogleLoginStates {
+export interface IDiscordLoginStates {
     code?: string
 }
 
-function GoogleLoginPage() {
+function DiscordLoginPage() {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const code = searchParams.get('code')
@@ -24,4 +24,4 @@ function GoogleLoginPage() {
     );
 }
   
-export default GoogleLoginPage
+export default DiscordLoginPage
